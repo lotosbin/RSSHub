@@ -110,28 +110,34 @@
                 docs: 'https://docs.rsshub.app/social-media.html#twitter',
                 source: '/:id',
                 target: '/twitter/user/:id',
-                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore',
+                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search',
             },
             {
                 title: '用户关注时间线',
                 docs: 'https://docs.rsshub.app/social-media.html#twitter',
                 source: '/:id',
                 target: '/twitter/followings/:id',
-                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore',
+                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search',
             },
             {
                 title: '用户喜欢列表',
                 docs: 'https://docs.rsshub.app/social-media.html#twitter',
                 source: '/:id',
                 target: '/twitter/likes/:id',
-                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore',
+                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search',
             },
             {
                 title: '列表时间线',
                 docs: 'https://docs.rsshub.app/social-media.html#twitter',
                 source: '/:id/lists/:name',
                 target: '/twitter/list/:id/:name',
-                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore',
+                verification: (params) => params.id !== 'home' && params.id !== 'explore' && params.id !== 'notifications' && params.id !== 'messages' && params.id !== 'explore' && params.id !== 'search',
+            },
+            {
+                title: '关键词',
+                docs: 'https://docs.rsshub.app/social-media.html#twitter',
+                source: '/search',
+                target: (params, url) => `/twitter/keyword/${new URL(url).searchParams.get('q')}`,
             },
         ],
     },
@@ -474,6 +480,16 @@
             },
         ],
     },
+    'pianyuan.la': {
+        _name: '片源网',
+        '.': [
+            {
+                title: '电影和剧集',
+                description: 'https://docs.rsshub.app/multimedia.html#pian-yuan',
+                source: '/',
+            },
+        ],
+    },
     'sspai.com': {
         _name: '少数派',
         '.': [
@@ -790,6 +806,18 @@
         ],
     },
 
+    'itslide.com': {
+        _name: 'ITSlide',
+        www: [
+            {
+                title: '最新',
+                docs: 'https://docs.rsshub.app/programming.html#itslide',
+                source: '/*',
+                target: '/itslide/new',
+            },
+        ],
+    },
+
     'leboncoin.fr': {
         _name: 'leboncoin',
         www: [
@@ -815,6 +843,98 @@
                     }
                     return '/remote-work/' + /\w+-(\w+)-\w+/.exec(url)[1];
                 },
+            },
+        ],
+    },
+
+    'chinatimes.com': {
+        _name: '中時電子報',
+        www: [
+            {
+                title: '新聞',
+                docs: 'https://docs.rsshub.app/traditional-media.html#zhong-shi-dian-zi-bao',
+                source: '/:caty',
+                target: (params) => '/chinatimes/' + params.caty,
+            },
+        ],
+    },
+
+    'ithome.com': {
+        _name: 'IT 之家',
+        it: [
+            {
+                title: 'IT 资讯',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/it',
+            },
+        ],
+        soft: [
+            {
+                title: '软件之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/soft',
+            },
+        ],
+        win10: [
+            {
+                title: 'win10 之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/win10',
+            },
+        ],
+        iphone: [
+            {
+                title: 'iphone 之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/iphone',
+            },
+        ],
+        ipad: [
+            {
+                title: 'ipad 之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/ipad',
+            },
+        ],
+        android: [
+            {
+                title: 'android 之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/android',
+            },
+        ],
+        digi: [
+            {
+                title: '数码之家',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/digi',
+            },
+        ],
+        next: [
+            {
+                title: '智能时代',
+                docs: 'https://docs.rsshub.app/new-media.html#it-zhi-jia',
+                source: '/',
+                target: '/ithome/next',
+            },
+        ],
+    },
+
+    'govopendata.com': {
+        _name: '新闻联播文字版',
+        cn: [
+            {
+                title: '新闻联播文字版',
+                docs: 'https://docs.rsshub.app/traditional-media.html#xin-wen-lian-bo-wen-zi-ban',
+                source: '/xinwenlianbo',
+                target: '/xinwenlianbo/index',
             },
         ],
     },
