@@ -388,6 +388,12 @@ category 列表：
 
 </Route>
 
+## 华北水利水电大学
+
+### 学校通知
+
+<Route author="vuhe" example="/ncwu/notice" path="/universities/ncwu/notice" />
+
 ## 华南理工大学
 
 ### 教务处通知公告
@@ -934,6 +940,19 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 
 </Route>
 
+## 武汉大学
+
+### 计算机学院公告
+
+<Route author="SweetDumpling" example="/whu/cs/2" path="/whu/cs/:type"
+:paramsDesc="['公告类型, 详见表格']">
+
+| 公告类型 | 新闻动态 | 学术讲座 | 学院通知 | 公示公告 |
+| -------- | -------- | -------- | -------- | -------- |
+| 参数     | 0        | 1        | 2        | 3        |
+
+</Route>
+
 ## 西安电子科技大学
 
 ### 教务处
@@ -1035,6 +1054,12 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 
 </Route>
 
+## 浙江大学城市学院
+
+### 新闻通知
+
+<Route author="zhang-wangz" example="/zucc/news/latest" path="/zucc/news/latest"></Route>
+
 ## 浙江工商大学
 
 ### 浙江工商大学
@@ -1044,6 +1069,28 @@ https://rsshub.app/**nuist**/`bulletin` 或 https://rsshub.app/**nuist**/`bullet
 | 通知公告 | 学生专区 | 公示公告 |
 | -------- | -------- | -------- |
 | tzgg     | xszq     | gsgg     |
+
+</Route>
+
+## 郑州大学
+
+### 郑州大学新闻网
+
+<Route author="niayyy-S" example="/zzu/news/zh" path="zzu/news/:type?"  :paramsDesc="['可选, 默认为 `zh`']">
+
+| 参数名称 | 综合新闻 | 学术动态 | 媒体郑大 | 院系风采 | 教学科研 | 学生信息 | 外事信息 |
+| -------- | -------- | -------- | -------- | -------- | -------- | -------- | -------- |
+| 参数     | zh       | xs       | mt       | yx       | ky       | stu      | ws       |
+
+</Route>
+
+### 软件学院
+
+<Route author="niayyy-S" example="/zzu/soft/news/xyxw" path="zzu/soft/news/:type?"  :paramsDesc="['可选, 默认为 `xyxw`']">
+
+| 参数名称 | 学院新闻 | 学院公告 | 学生工作 |
+| -------- | -------- | -------- | -------- |
+| 参数     | xyxw     | xygg     | xsgz     |
 
 </Route>
 
